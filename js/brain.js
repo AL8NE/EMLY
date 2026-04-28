@@ -1,5 +1,5 @@
 // --- EMLY AI BRAIN (Gemini Integration) ---
-const GEMINI_API_KEY = "AIzaSyB7jVN6mWp6oT5aBkdT3GYrtxe0mzo1p8M"; // We will get this next
+const GEMINI_API_KEY = "xyz"; // We will get this next
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 async function askEmly(userPrompt) {

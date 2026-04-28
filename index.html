@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emly Eyes - Command Center</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/images/icon.png"> 
+</head>
+<body>
+  <div id="stars"></div>
+  <div id="sky-element">☀️</div>
+  <div id="digital-clock" class="hidden">00:00</div>
+  <div id="speech-bubble" class="hidden"></div>
+
+  <div class="face">
+    <div class="eye"></div>
+    <div class="eye"></div>
+  </div>
+
+  <div id="task-trigger" onclick="toggleTasks()">📋</div>
+
+  <div id="task-panel">
+    <div class="panel-header">
+      <span id="close-tasks" onclick="toggleTasks()">✖ CLOSE</span>
+      <h3>Grind Mode</h3>
+    </div>
+    <div class="command-buttons">
+      <button class="task-btn" onclick="window.open('https://tasks.google.com', '_blank')">GOOGLE TASKS 📋</button>
+      <button class="task-btn" onclick="window.open('https://www.notion.so/', '_blank')">NOTION STRATEGY 📓</button>
+      <button class="task-btn" onclick="window.open('https://calendar.google.com', '_blank')">EXAM CALENDAR 📅</button>
+    </div>
+  </div>
+
+  <div id="floating-window" class="hidden">
+    <div class="window-header">
+      <span class="window-title">NRI Property Command</span>
+      <span onclick="closeWindow()" class="close-btn">✖ CLOSE</span>
+    </div>
+    <div class="portal-grid">
+      <div class="portal-card" onclick="window.open('https://your-legal-check-link.com', '_blank')">Legal Checks 📄</div>
+      <div class="portal-card" onclick="window.open('https://your-rental-management-link.com', '_blank')">Rental Mgt 🏠</div>
+      <div class="portal-card" onclick="window.open('https://your-buying-link.com', '_blank')">Property Buying 🏢</div>
+      <div class="portal-card" onclick="window.open('https://your-leads-link.com', '_blank')">Client Leads 📊</div>
+      <div class="portal-card ai-button" onclick="triggerAI()">Ask Emly 🎙️</div>
+    </div>
+  </div>
+   
+  <div id="camera-btn" onclick="toggleCameraView()">📷</div>
+
+  <div id="camera-window" class="hidden">
+    <div class="window-header">
+      <span class="window-title">Emly's Vision</span>
+      <span onclick="toggleCameraView()" class="close-btn">✖ CLOSE</span>
+    </div>
+    <button id="light-toggle" onclick="toggleNightLight()">💡</button>
+    <video id="webcam" autoplay playsinline muted></video>
+  </div>
+
+  <script type="module">
+    import { FilesetResolver, GestureRecognizer } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/vision_bundle.mjs";
+    window.FilesetResolver = FilesetResolver;
+    window.GestureRecognizer = GestureRecognizer;
+  </script>
+
+  <script src="js/speech.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/actions.js"></script>
+<script src="js/brain.js"></script>
+<script src="js/vision.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
